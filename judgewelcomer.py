@@ -15,7 +15,7 @@ async def on_member_join(member):
     server = member.server
     channel = discord.utils.get(server.channels, name='welcome')
     embed = discord.Embed(color=0xdaff00)
-    embed.add_field(name=':inbox_tray: **{} Welcome**', value='Please read the rules of **{}**'.format(server.name), inline=False)
+    embed.add_field(name=':inbox_tray: **{} Welcome**'.format(member.name), value='Please read the rules of **{}**'.format(server.name), inline=False)
     embed.set_footer(text='Welcome!')
     await client.send_message(channel, embed=embed)
 
@@ -25,7 +25,7 @@ async def on_member_remove(member):
     server = member.server
     channel = discord.utils.get(server.channels, name='welcome')
     embed = discord.Embed(color=0xdaff00)
-    embed.add_field(name=':outbox_tray: **{}** Has left', value='He will be missed!', inline=True)
+    embed.add_field(name=':outbox_tray: **{}** Has left'.format(member.name), value='He will be missed!', inline=True)
     embed.set_footer(text='Goodbye!')
     await client.send_message(channel, embed=embed)
 
