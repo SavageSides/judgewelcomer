@@ -1,1 +1,1 @@
-worker: python welcome.py
+worker: python judgewelcomer.py
