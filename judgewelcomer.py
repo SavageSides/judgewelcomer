@@ -20,7 +20,7 @@ async def on_member_join(member):
     await client.send_message(channel, embed=embed)
 
 @client.event
-async def on_member_join(member):
+async def on_member_remove(member):
     await client.change_presence(game=discord.Game(name=f"over {len(set(client.get_all_members()))} users - >help"))
     server = member.server
     channel = discord.utils.get(server.channels, name='welcome')
